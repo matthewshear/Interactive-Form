@@ -1,0 +1,214 @@
+<!--
+****************************************************************************************************************************************************************************
+*** PROJECT: Pagination and Keyword Search                                                                                                                               ***
+*** Author: Matthew Shear, 2017                                                                                                                                          ***
+*** Summary: This project contains an interactive form, which demonstrates some basic form field manipulation.                                                           ***
+****************************************************************************************************************************************************************************
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- basic meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Matthew Shear's Online Portfolio - Projects - Interactive Form">
+    <meta name="keywords" content="Matthew Shear, Shear, Portfolio, projects, project, interactive, form">
+    <meta name="author" content="Matthew Shear">
+
+    <!-- page title -->
+    <title>MatthewShear.com - Portfolio Projects and Code Samples - Interactive Form</title>
+
+    <!-- link primary layout CSS file (style.css) -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <!-- link to latest version of the JQuery library (minified) -->
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+    <!-- link main javascript page -->
+    <script src="cc_validate.js" type="text/javascript"></script>
+
+    <!-- link main javascript page -->
+    <script src="script.js" type="text/javascript"></script>
+
+    <noscript>
+      <meta HTTP-EQUIV="REFRESH" content="0; url=/javascript-required.php">
+    </noscript>
+
+</head>
+
+<body>
+
+	<div class="container">
+    
+    <header>
+      <span>Register for</span>
+      <h1>Full Stack Conference</h1>
+    </header>
+
+    <form action="index.html" method="post">
+              
+      <div id="error-msg" class="error-msg">
+      </div>
+
+      <fieldset>         
+
+        <legend>Basic Info</legend>
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="user_name">
+        
+        <label for="mail">Email:</label>
+        <input type="email" id="mail" name="user_email">
+        
+        <label for="title">Job Role</label>
+        <select id="title" name="user_title">
+          <option value="full-stack js developer">Full Stack JavaScript Developer</option>
+          <option value="front-end developer">Front End Developer</option>
+          <option value="back-end developer">Back End Developer</option>
+          <option value="designer">Designer</option>          
+          <option value="student">Student</option>
+          <option value="other">Other</option>  
+        </select>
+        <input type="text" id="other-title" name="other-title" placeholder="Your Title">
+
+      </fieldset>
+      
+      <fieldset class="shirt">
+
+        <legend>T-Shirt Info</legend>
+        
+        <div>
+          <label for="size">Size:</label>
+          <select id="size" name="user_size">
+            <option value="small">S</option>
+            <option value="medium" selected>M</option>
+            <option value="large">L</option>
+            <option value="extra large">XL</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="design">Design:</label>
+          <select id="design" name="user_design">
+            <option value="">Select Theme</option>
+            <option value="retro">Retro Design</option>
+            <option value="modern">Modern Design</option>
+          </select>
+        </div>
+
+        <div id="colors-js-puns" class="">
+          <label for="color">Color:</label>
+          <select id="color">
+            <option value="">Select Color</option>
+            <option value="cornflowerblue">Cornflower Blue</option>
+            <option value="darkslategrey">Dark Slate Grey</option> 
+            <option value="gold">Gold</option> 
+            <option value="tomato">Tomato</option>
+            <option value="steelblue">Steel Blue</option> 
+            <option value="dimgrey">Dim Grey</option> 
+          </select>
+        </div> 
+
+      </fieldset>
+
+      <fieldset class="activities">
+
+        <legend>Register for Activities</legend>
+        <label><input type="checkbox" name="all"> Main Conference — $200</label>
+        <label><input type="checkbox" name="js-frameworks"> JavaScript Frameworks Workshop — Tuesday 9am-12pm, $100</label>
+        <label><input type="checkbox" name="js-libs"> JavaScript Libraries Workshop — Tuesday 1pm-4pm, $100</label>
+        <label><input type="checkbox" name="express"> Express Workshop — Tuesday 9am-12pm, $100</label>
+        <label><input type="checkbox" name="node"> Node.js Workshop — Tuesday 1pm-4pm, $100</label>          
+        <label><input type="checkbox" name="build-tools"> Build tools Workshop — Wednesday 9am-12pm, $100</label>
+        <label><input type="checkbox" name="npm"> npm Workshop — Wednesday 1pm-4pm, $100</label>
+        <p id="total"></p>
+        </p>                  	
+
+      </fieldset>
+
+      <fieldset>
+
+        <legend>Payment Info</legend>
+
+        <label for="payment">I'm going to pay with:</label>
+        <select id="payment" name="user_payment">
+          <option value="select_method" selected>Select Payment Method</option>
+          <option value="credit card">Credit Card</option>
+          <option value="paypal">PayPal</option>
+          <option value="bitcoin">Bitcoin</option>
+        </select>
+
+        <div id="select-payment-method">
+          <p>Please select a payment method.</p>
+        </div>
+
+        <div id="credit-card" class="credit-card">
+
+          <div class="col-6 col">
+            <label for="cc-num">Card Number:</label>
+        	  <input id="cc-num" name="user_cc-num" type="text" minlength="15" maxlength="16">
+          </div>
+
+          <div class="col-3 col">
+            <label for="zip">Zip Code:</label>
+            <input id="zip" name="user_zip" type="text" minlnegth="5" maxlength="10"> 
+          </div>
+
+          <div class="col-3 col">
+            <label for="cvv">CVV:</label>
+            <input id="cvv" name="user_cvv" type="text" minlength="3" maxlength="3"> 
+          </div>
+
+          <div class="col-4 col" style="margin-left: 0;">
+            <label for="exp-month">Expiration Date:</label>
+            <select id="exp-month" name="user_exp-month">
+              <option value="1" selected>1 - January</option>
+              <option value="2">2 - February</option>
+              <option value="3">3 - March</option>
+              <option value="4">4 - April</option>
+              <option value="5">5 - May</option>
+              <option value="6">6 - June</option>
+              <option value="7">7 - July</option>
+              <option value="8">8 - August</option>
+              <option value="9">9 - September</option>
+              <option value="10">10 - October</option>
+              <option value="11">11 - November</option>	
+              <option value="12">12 - December</option>          		          
+            </select>
+          </div>
+
+          <div class="col-4 col">
+            <label for="exp-year">Expiration Year:</label>
+            <select id="exp-year" name="user_exp-year">
+              <option value="2017" selected>2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>        		          
+              <option value="2021">2021</option>                      
+              <option value="2020">2020</option>                      
+            </select> 	                  	         
+          </div>
+
+        </div>
+
+        <div id="paypal" class="paypal">
+        	<p>If you selected the PayPal option we'll take you to Paypal's site to set up your billing information, when you click “Register” below.</p>
+        </div> 
+
+        <div id="bitcoin" class="bitcoin">
+        	<p>If you selected the Bitcoin option we'll take you to the Coinbase site to set up your billing information. Due to the nature of exchanging Bitcoin, all Bitcoin transactions will be final.</p>
+        </div>                  
+
+      </fieldset>        
+        
+      <button type="submit">Register</button>
+      
+    </form>
+
+	</div>
+
+</body>
+</html>
